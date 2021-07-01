@@ -354,7 +354,7 @@ class AdobeConnectService implements IAdobeConnectService
     {
         $usernamesuffix = config('larapress.adobeconnect.username_suffix');
         if (Str::endsWith($login, $usernamesuffix)) {
-            $class = config('larapress.crud.user.class');
+            $class = config('larapress.crud.user.model');
             return call_user_func([$class, 'where'], 'name', substr($login, 0, strlen($login) - strlen($usernamesuffix)))->first();
         }
 

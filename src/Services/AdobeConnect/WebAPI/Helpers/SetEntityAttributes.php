@@ -12,7 +12,7 @@ abstract class SetEntityAttributes
     /**
      * Iterate attributes and call the set method from object
      *
-     * @param mixed $object
+     * @param $object
      * @param mixed $attributes
      */
     public static function setAttributes(&$object, $attributes)

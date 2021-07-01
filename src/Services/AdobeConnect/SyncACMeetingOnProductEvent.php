@@ -19,7 +19,7 @@ class SyncACMeetingOnProductEvent implements ShouldQueue
 
     public function handle(CRUDVerbEvent $event)
     {
-        if ($event->providerClass === ProductCRUDProvider::class) {
+        if ($event->providerClass === config('larapress.ecommerce.routes.products.provider')) {
             $actypename = config('larapress.adobeconnect.product_typename');
             $model = $event->getModel();
             if (isset($model->data['types'][$actypename]['servers'])) {
